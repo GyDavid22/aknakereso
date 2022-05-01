@@ -139,6 +139,8 @@ def universal_window(window, text, type, in_game = False):
 
 def save_game(game_data, player):
     """Játékállás elmentése"""
+    if not os.path.exists("Data"):
+        os.mkdir("Data")
     with open("Data/save.txt", "wt", encoding="utf-8") as f:
         f.write(f"{game_data.set_time}\n")
         f.write(f"{game_data.num_of_players}\n")
